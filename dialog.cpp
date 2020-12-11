@@ -54,7 +54,7 @@ void Dialog::get_mac_clicked()
     }
     auto ifaces = this->arper.get_ifaces();
     for (const auto& iface: ifaces) {
-        std::cout << iface << std::endl;
+        std::cerr << iface << std::endl;
         this->arper.set_ifname(iface);
         if(this->arper.probe(res) == 0) {
             this->status->setText(QString("copied to clipboard: ") +
